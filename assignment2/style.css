@@ -1,0 +1,217 @@
+/*
+
+<!-- 
+Assignment2 WEBD Bradley Gillap. 
+
+HTML Validates at https://validator.w3c.org/
+CSS validates at https://jigsaw.w3.org/css-validator/ with the following warnings
+
+Line 66		Property -webkit-background-size is an unknown vendor extension
+Line 68		Property -moz-background-size is an unknown vendor extension
+Line 70		Property -o-background-size is an unknown vendor extension
+
+Bonus: Website is responsive down to 320px without using @media tags because that's cheating. :D
+
+Project Criticism:  No favicon provided, no title information provided.  Room in footer for validation
+buttons, but the example showed none. 
+
+backup located on @ 
+http://www.bradgillap.com/webd/assignment2/
+
+-->
+
+*/
+
+body {
+	margin: 0;
+	font-family: 'Raleway', Arial, sans-serif, serif;
+	color:#FFFFFF;
+
+}
+
+header{
+	padding-top:9%;
+	background-color:#F81344;
+	height:960px; /* Can't get this to work using percentages. Responsive solution? */
+
+	background-image: url('images/hero.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size:cover;
+	
+	/* Specific Browser Support */
+	/* Chrome 1 and Safari 3 */
+	-webkit-background-size:cover;
+	/* Mozilla 3.6 */
+	-moz-background-size:cover;
+	/* Opera 10 */
+	-o-background-size:cover;
+	background-position:top, center;
+	overflow: hidden;
+}
+
+h1 { 
+	font-weight: 900;
+	font-size: 400%;
+
+	}
+	
+h2 {
+	font-weight: 500;
+	font-size: 200%;
+}
+p {
+	line-height:120%;
+	color:#000000;
+}
+nav {
+	margin-top:2%;	
+}
+
+fieldset {
+	/* border-color:rgb(248,19,68);  IE 6, 7, 8 fallback */
+	border-color:rgba(248,19,68,0.3);
+	margin-bottom: 3%;
+}
+legend {
+	font-weight:500;
+	font-size:120%;
+}
+
+#bgred {
+
+	background-color:#F81344;
+	color: #FFFFFF;
+	padding-bottom: 20%;
+	margin-bottom: 6%;
+	overflow:hidden;
+
+}
+
+#bgwhite {
+	background-color:#FFFFFF;
+	color: #F81344;
+	
+}
+
+#bgwhite h1 {
+	padding-bottom: 5%;
+}
+
+
+#whitebox {
+	/*color:rgba(255,255,255);  IE 6, 7, 8 fallback */
+	color:rgba(255,255,255,0.9);
+	border-style: solid;
+	border-width: 2px;
+	padding-left: 1.5%;
+	padding-right:1.5%;
+	padding-top:0.5%;
+	padding-bottom:0.5%;
+	font-weight:500;
+	font-size: 120%;
+	
+}
+/* pseudo classes for top button */
+#whitebox:hover {
+	background-color:#f81344
+}
+#whitebox a:link {
+	color:#FFFFFF;
+	text-decoration: none;
+}
+#whitebox a:visited {
+	color:#FFFFFF;
+	text-decoration: none;
+}
+
+#wrapper {
+	width:100%;
+	margin: 0 auto;
+
+}
+
+#leftside {
+	float: left;
+	padding-left: 15%;
+	width:30%;
+	min-width: 200px;
+
+
+}
+#rightside {
+	float: right;
+	padding-right: 20%;
+	width: 30%;
+	min-width:200px;
+
+}
+
+#mailform {
+	color:#000000;
+}
+
+#mailform input{
+	display:block;
+	width:97%;	
+	border-color:rgba(248,19,68,0.3);
+	border-style: solid;
+	border-width: 1px;
+	}
+#mailform input:hover {
+	border-color:rgba(248,19,68,1);
+}
+
+#tshirtform {
+	color: #000000;
+
+}
+#tshirtform fieldset {
+	line-height: 30px;
+}
+
+
+#tac {
+	color: #000000;
+}
+
+#orderbutton {
+	color: #FFFFFF;
+	background-color:#f81344;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	border-style: none;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	padding-left: 3%;
+	padding-right: 3%;
+	font-weight: 900;
+	
+	}
+	
+#orderbutton:hover {
+
+	background-color:#f92754;
+
+}
+/* Forced modifiers */
+.centertext {
+	text-align:center;
+
+}
+.middlemargins {
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+footer {
+	clear:both;
+	background-color: black;
+	width: 100%;
+	padding-top: 1%;
+	padding-bottom:0.5%;
+	text-align: center;
+	font-weight:300;
+	font-size:70%;
+
+}

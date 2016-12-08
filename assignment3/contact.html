@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+
+<html id="bgimage-contact">
+	<head>
+	<meta charset="utf-8">
+	<title> Slightly Used Diffraculators </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/style.css" />
+	<link href='https://fonts.googleapis.com/css?family=PT+Sans:700%7cCabin:400,700' rel='stylesheet' type='text/css'> 
+	<link href="images/favicon.ico" rel="icon" type="image/x-icon" />
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+	<script>
+    	function initialize() {
+        	var mapCanvas = document.getElementById('map');
+        	var mapOptions = {
+          		center: new google.maps.LatLng(43.013192,-79.26626),
+          		zoom: 17,
+          		mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+      	}
+    	google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+	</head>
+
+<body>
+	<header class="bggreenbox pulsing">
+		<nav>
+			<ul>
+				<li><a href="index.html">&#x1f3e0; Home</a></li>
+				<li><a href="buy.html">&#x1F4B8; Buy</a></li>
+				<li><a href="contact.html">&#x2709; Contact</a></li>
+			</ul>
+		</nav>
+		<h1 class="yellowtext">
+			Slightly Used Defraculator's&reg;
+		</h1>
+	</header>
+
+<!-- Was going to use microformats but too scared of losing mark for generated code. :/  -->
+	<div class="contact-float-left">
+		<div class="vcard bgbluebox bgroundbox">
+			<h2 class="whitetext">Contact Us!</h2>
+			<img src="images/brain.png" alt="Brain Microphone"> 
+			<p>We love to hear from people about anything Defraculator related.</p>
+		</div>
+		<div class="vcard bgbluebox bgroundbox">
+			<h2 class="whitetext">Contact Details</h2>
+		 		<ul>
+		 			<li>Name: Bradley J Gillap</li>
+		 			<li>Organization: Niagara College</li>
+		 			<li>Postal Code: L3C 7L3</li>
+		 			<li>City: Welland (Campus)</li>
+		 			<li>Province: Ontario</li>
+		 			<li>Country: Canada</li>
+		 			<li>Phone: (905) 735-2211</li>
+		 		</ul>
+		
+			
+				<img src="images/nc.png" alt="Niagara College Logo">
+		</div>
+		
+
+	</div>
+		
+	<div class="contact-float-right">
+	
+	
+	<h2 class="redtext">Location by 
+		<span class="bluetext">G</span>
+		<span class="redtext">o</span> 
+		<span class="yellowtext">o</span> 
+		<span class="bluetext">g</span> 
+		<span class="greentext">l</span>
+		<span class="redtext">e</span> 
+	Maps:</h2>
+	<div id="map"></div>
+		<h3 class="bluetext">Additional Instructions:</h3>
+		<p>Just take QEW to the 406 South and get off at the Woodlawn Road.Exit</p>
+		<h3 class="bluetext">Instructions for Dunville residents.</h3>
+		<p>Drive real far down the long road until you see the house with the couch. Turn left until you see
+			the sign with a big "C". That's the letter "C". Go ahead and pickup that hitchhiker if you feel
+			comfortable. When you get there, tell the parking attendant who you are and where you are from.
+			They will immediately nod and offer to direct you to a parking space.
+		</p>
+	</div>
+
+	<footer class="bgbluebox whitetext"> 
+		<a href="resources/resources.txt">resources.txt</a>
+	</footer>
+</body>
+
+</html>

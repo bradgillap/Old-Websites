@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<html>
+
+<!-- 
+Assignment2 WEBD Bradley Gillap. 
+
+HTML Validates at https://validator.w3c.org/
+CSS validates at https://jigsaw.w3.org/css-validator/ with the following warnings
+
+Line 66		Property -webkit-background-size is an unknown vendor extension
+Line 68		Property -moz-background-size is an unknown vendor extension
+Line 70		Property -o-background-size is an unknown vendor extension
+
+Bonus: Website is responsive down to 320px without using @media tags because that's cheating. :D
+
+Project Criticism:  No favicon provided, no title information provided.  Room in footer for validation
+buttons, but the example showed none. 
+
+backup located @ 
+http://www.bradgillap.com/webd/assignment2/
+
+-->
+
+
+
+<head>
+    <meta charset="utf-8">
+    <title>Devgeek Tees.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css" />
+	<!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Raleway:300,500,900' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+	<header> 
+		<h1 class="centertext">
+			DEVgeek Tees.
+		</h1>
+
+		<h2 class="centertext">
+			t-shirts for developers & programmers, designers and other hip nerds
+		</h2>
+			<nav class="centertext">
+				<span id="whitebox"><a href="#emailform">Get Your Awesome Tee Today</a></span>
+			</nav>
+	</header>
+	
+	<!-- Red Section -->
+
+	<div id="bgred">
+		<h1 class="centertext">
+			About DevGeek T-Shirts.
+		</h1>
+		<div class="centertext middlemargins">
+			DevGeek T-shirts was an idea conceived after modest success on Kickstarter with a single
+			t-shirt called The Super Geek Tee. After realizing there was an underserved market for developer
+			themed t-shirts. I came up with a handful of design concepts, elicited help from a good friend
+			to film a video, and launched DevGeek T-shirts on Kickstarter in April, 2013. About a month
+			later. 469 backers made DevGeek T-shirts a success.
+		</div>
+		<h2 class="centertext">
+			Have a shirt idea?
+		</h2>
+		<div class="centertext middlemargins">
+			Sometimes people tell us they have a great idea for a shirt, Is that you? Then open an issue
+			on our shirt-ideas repo on GitHub and tell us about it!
+		</div>
+	</div>
+	
+	<!-- White Section -->
+	
+
+	<div id="bgwhite">
+
+		<h1 class="centertext">
+			Order a DevGeek T-Shirt Today.
+		</h1>
+		
+		
+	<div id="wrapper">
+		<div id="leftside">
+				
+			<h2>
+				Get Your T-Shirt Now!
+			</h2>
+			<form method="post" action="http://webdevbasics.net/scripts/demo.php">
+			<a id="emailform"></a>
+            <div id="mailform">
+                <fieldset>
+					<legend>Mailing Information</legend>
+
+						<label for="name">Name</label>
+						<input id="name" name="name" type="text" required><br>
+						
+						<label for="address">Address</label>
+						<input id="address" name="address" type="text" required><br>
+						
+						<label for="city">City</label>
+						<input id="city" name="city" type="text" required><br>
+						
+						<label for="province">Province</label>
+						<input id="province" name="province" type="text" required><br>
+						
+						<label for="postalcode">Postal Code</label>
+						<input id="postalcode" name="postalcode" type="text" required><br>
+						
+						<label for="phone">Phone</label>
+						<input id="phone" name="phone" type="tel" required><br>
+						
+						<label for="email">E-Mail</label>
+						<input id="email" name="email" type="email" required><br>
+				</fieldset>
+            </div>
+            <div id="tshirtform">
+                <fieldset>
+					<legend>Tshirt Information</legend>
+
+						Pick a tee
+						<br>
+						<input type="radio" name="tshirt" value="dev">
+						<label for="email">Developer</label>
+						<input type="radio" name="tshirt" value="des">
+						<label for="email">Designer</label>
+						<input type="radio" name="tshirt" value="dad">
+						<label>Data Nerd</label><br>
+						
+						Please select your size
+						<select name="size">
+						<option value="small">Small</option>
+						<option value="medium">Medium</option>
+						<option value="large">Large</option>
+						<option value="large">Extra Large</option>
+						</select>
+				</fieldset>	
+            </div>
+            <div id="tac">
+                <fieldset>
+					<legend>Terms and Conditions</legend>
+						<br>
+						Terms and Conditions of sale - Have fun, wear your DevGeek T-shirts
+						with pride and always build for the internet.
+						<br><br>
+						<input type="checkbox" name="terms" value="checked">
+						I agree to the terms and conditions of the sale between the vendor.
+						DevGeek Tees and the client (me).
+				</fieldset>
+            </div>
+			<input type="submit" value="Order Now" id="orderbutton">
+		</form>
+		</div>
+		
+		<div id="rightside">
+			<h2>
+				Our T-Shirts are Awesome
+			</h2>
+			
+			<p>
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+			</p>
+
+			<h2>
+				We love the environment
+			</h2>
+
+			<p>
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+			</p>
+			
+			<h2>
+				We're super geeky devs
+			</h2>
+			<p>
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+			</p>
+		</div>
+</div>
+	</div>
+	
+	<footer>
+	&copy; 2015 DevGeek T-Shirts Ltd
+	</footer>
+</body>
+</html>

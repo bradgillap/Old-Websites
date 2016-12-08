@@ -1,0 +1,695 @@
+/* Bradley Gillap 2015 
+	This is the 3rd rewrite in an attempt to clean and organize properties.
+	This 3rd revision is an attempt to build the CSS more like lego to plugin classes rather than
+	having large chunks of ID's in selectors and hopefully better commenting.
+	If three revisions is good enough for Kevin Rose then it should be good enough for Niagara :D 
+*/
+
+
+/* FAST REFERENCE
+RED 242,29,47 #F21D2F
+Orange 237,136,0 #ED8800
+Yellow 255,205,3#FFCD03
+Green 70,160,51 #46A033
+Blue 0,149,200 #0095C8
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* NO BREAKPOINTS BEGAN YET. */
+
+	/* BACKGROUND Different Image per page defined in ID's*/
+
+HTML {
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#bgimage-index {
+	background-image: url("../images/laserred.png");
+}
+#bgimage-buy {
+	background-image: url("../images/barcode.png");
+}
+#bgimage-contact {
+	background-image: url("../images/nucleus.png");
+}
+
+
+	/**********************************
+	INDEPENDENT COLOURS FOR TEXT GLOBAL
+	***********************************/
+
+.blacktext {
+	color:black;
+}
+.whitetext{
+	color:whitesmoke;
+}
+
+	
+.redtext {
+	color:rgb(242,29,47);
+}
+
+.orangetext {
+	color:rgb(237,136,0);
+}
+.yellowtext {
+	color:rgb(255,205,3);
+}
+.greentext {
+	color:rgb(70,160,51);
+	
+}
+.bluetext {
+	color:rgb(0,149,200);
+	
+}
+
+	/****************************************************************
+	INDEPENDENT BACKGROUND COLOURS FOR CONTENT BOXES ALPHA CHANNEL'd GLOBAL
+	*****************************************************************/
+.bgredbox {
+	background-color:rgb(242,29,47); /*FALLBACK */
+	background-color:rgba(242,29,47,0.8);
+}
+
+.bgorangebox {
+	background-color:rgb(237,136,0); /*FALLBACK */
+	background-color:rgba(237,136,0,0.8);
+}
+
+.bgyellowbox {
+	background-color:rgb(255,205,3); /*FALLBACK */
+	background-color:rgba(255,205,3,0.8);
+}
+
+.bggreenbox {
+	background-color:rgb(70,160,51); /*FALLBACK */
+	background-color:rgba(70,160,51,0.8);
+}
+
+.bgbluebox {
+	background-color:rgb(0,149,200); /*FALLBACK */
+	background-color:rgba(0,149,200,0.8);
+}
+
+.bgroundbox {   
+	border:3px solid black;
+	border-radius: 25px;
+	padding:1em;
+}
+
+
+	/****************************************************************
+	SOME BASE RULES FOR TYPOGRAPHY
+	*****************************************************************/
+
+BODY {
+	font-family: 'Cabin', Arial, sans-serif;
+}
+
+P {
+	font-size:1em;
+	letter-spacing:1px;
+}
+
+H1 {
+	font-family: 'PT Sans', 'Arial Black', sans-serif;
+	font-size:3em;
+}
+
+H2 {
+	font-family: 'PT Sans', 'Arial Black', sans-serif;
+	font-size:2em;
+}
+
+H3 {
+	font-family: 'PT Sans', 'Arial Black', sans-serif;
+	font-size:1.7em;
+}
+
+H4 {
+	font-family: 'PT Sans', 'Arial Black', sans-serif;
+	font-size:1.5em;
+}
+
+
+
+	/****************************************************************
+	WIREFRAME STRUCTURE FOR PAGES GLOBAL
+	*****************************************************************/
+HEADER {
+
+	margin-bottom: 2em;
+	border-bottom:3px solid black;
+}
+
+
+
+HEADER NAV {
+	background-color:rgb(0,149,200);
+
+}
+
+HEADER H1 {
+	text-align:center;
+	letter-spacing:.3em;
+	line-height:1.5em;
+	padding:0em 1em;
+}
+
+HEADER NAV UL {
+	width: 100%; /* Can't do it the mobilefirst way. Margin auto needs real numbers Sorry, example unclear.*/
+	margin:0 auto;
+	list-style-type:none;
+}
+
+HEADER NAV UL LI {
+	display:inline-block;
+	text-align:center;
+
+}
+
+HEADER NAV UL LI A {
+
+	text-decoration:none;
+	text-align:center;
+	color:whitesmoke;
+	line-height:2.5em;
+
+
+}
+
+NAV UL LI A:hover {
+	display:inline-block;
+	background-color: rgb(237,136,0);
+}
+
+
+FOOTER {
+	clear:both;
+	width: 100%;
+	padding-top: 1em;
+	padding-bottom:1em;
+	bottom:0;
+	text-align: center;
+	margin-top:2em;
+}
+
+FOOTER A{
+	text-decoration:none;
+}
+
+
+	/****************************************************************
+	INDEX PAGE SPECIFIC!
+	*****************************************************************/
+
+#index-first-wrapper {
+	display:block;
+	width:100%;
+
+}
+
+.index-first-leftfloat {
+	display:block;
+	width:47%;
+	float: left;
+	clear:both;
+
+
+
+}
+
+	.index-first-leftfloat img{
+		width:60%;
+		margin-left:2em;
+
+	}
+
+.index-first-rightfloat {
+	display:block;
+	width:45%;
+	float: right;
+
+}
+
+	/****************************************************************
+	FORM PAGE SPECIFIC!
+	*****************************************************************/
+	
+#buy-form label{
+    display: inline-block;
+    width: 150px;
+    text-align: left;
+    font-weight:700;
+
+}
+#buy-form input {
+  display: inline-block;
+  padding: 5px;
+  margin:2px 0;
+}
+	#buy-form input:hover {
+	background-color:rgb(237,136,0); 
+	}	
+#buy-form select {
+	margin:1em 0;
+}
+
+#buy-form input[type=radio] { 
+	display:inline;
+	padding:0 1em; 
+	
+}
+
+
+	/****************************************************************
+	COMMENT SPECIFIC BUY PAGE!
+	*****************************************************************/
+
+#commentcontainer {
+		clear:both;
+		width:80%;
+		margin:0 auto;
+		display:block;
+	}
+#index-comment-form {
+	width:100%;
+	padding-top:20px;
+	color:whitesmoke;
+}
+
+
+#comment-float-left {
+
+	float:left;
+	margin-left:10%;
+
+}
+
+#comment-float-left input {
+	display:block;
+}
+
+#comment-float-right {
+	
+	float:right;
+	margin-right:10%;
+}
+
+
+#index-form-orderbutton {
+	padding:10px;
+	margin:10px;
+}
+
+
+
+.comments-name {
+	background-color:whitesmoke;
+	font-size:1.2em;
+	padding:5px;
+	margin-top:5px;
+	margin-left:5px;
+	margin-right:5px;
+	border:solid 3px black;
+	
+}
+
+.comments-body {
+	background-color:whitesmoke;
+	padding:5px;
+	margin-top:5px;
+	margin-left:5px;
+	margin-right:5px;
+	border:solid 3px black;
+	
+}
+
+.comments-body img {
+	width:60px;
+	padding-right:5px; /* using width with padding can sometimes make elements larger than expected... Nuhh UHHH!" */
+	padding-bottom:5px;
+	display:block;
+	float:left;
+
+}
+
+.comments-body p {
+	display:inline;
+}
+
+.comments-nested {
+	padding-left:5%;
+}
+
+
+/* hacky STUFF */
+
+.breakspace {
+	clear:both;
+	display:block;
+	width:100%;
+	height: 20px;
+}
+
+/* This is for the contact info on the contact page. Just too tired to do it right REGRET*/
+.clear {
+	clear:left;
+}
+/****************************************************************
+COMMENT SPECIFIC BUY PAGE!
+*****************************************************************/
+
+#contact-wrap {
+	width:100%;
+}
+
+.contact-float-left {
+	
+	display:block;
+	margin:0 auto;
+	float:left;
+	overflow:auto;
+	width:50%;
+}
+.contact-float-left-brain{
+	margin:0 auto;
+	display:block;
+	width: 50%;
+}
+
+.contact-float-left-brain img{
+	width:40%;
+}
+
+/* Map is inside this */
+.contact-float-right {
+
+	display:block;
+	margin:0 auto;
+	float:right;
+	overflow:auto;
+	width:50%;
+}
+
+#map {
+
+        width: 50%;
+        height: 30em;
+      }
+.vcard {
+    display:block;
+	letter-spacing:1px;
+}
+
+.vcard img {
+	width:60%;
+}
+
+	/****************************************************************
+	ANIMATIONS
+	*****************************************************************/
+@-webkit-keyframes greenPulse {
+  from { 
+  	background-color: rgb(70,160,51); 
+  	background-color: rgba(70,160,51,.9); 
+  }
+  25% { 
+  	background-color: rgb(70,170,51); 
+  	background-color: rgba(70,170,51,.9); 
+  }
+  50% { 
+  	background-color: rgb(70,180,51); 
+  	background-color: rgba(70,180,51,.9); 
+  }
+  75% { 
+  	background-color: rgb(70,190,51); 
+  	background-color: rgba(70,190,51,.9); 
+  }
+  50% { 
+  	background-color: rgb(70,180,51); 
+  	background-color: rgba(70,180,51,.9); 
+  	
+  }
+  25% { 
+    background-color: rgb(70,170,51); 
+  	background-color: rgba(70,170,51,.9); 
+  }
+  to { 
+  	background-color: rgb(70,160,51); 
+  	background-color: rgba(70,160,51,.9); 
+  }
+}
+	/****************************************************************
+	ANIMATIONS CONTINUED
+	*****************************************************************/
+.pulsing {
+
+  -webkit-animation-name: greenPulse;
+  -moz-animation-name: greenPulse;
+  -o-animation-name: greenPulse;
+  -webkit-animation-duration: 3s;
+  -moz-animation-duration: 3s;
+  -o-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+}
+
+
+/****************************************************************
+ MOBILE DEVICE BREAK. YAY 320px hopefully not much less
+*****************************************************************/
+
+@media only screen and (max-width: 320px) {
+	
+	HEADER H1 {
+		font-size:1em;
+		letter-spacing:0.1em;
+
+	}
+	
+	NAV UL LI {
+		width:100%;
+		display:block;
+	}
+	NAV UL LI A {
+		width:100%;
+		display:inline-block;
+	}
+
+	.index-first-rightfloat {
+		float:left;
+		width:80%;
+		margin-left:1em;
+	}
+	.index-first-leftfloat img{
+		width:90%;
+	}
+	.contact-float-left {
+		width:100%;
+		margin:30px auto;
+
+	}
+	.contact-float-right {
+		
+
+	width:100%;
+	display:block;
+	margin:0 auto;
+	
+
+	}
+	P {
+		font-size:1.1em;
+		letter-spacing:1px;
+	}
+
+	#comment-float-right{
+		float:left;
+	}
+
+
+	#map {
+        width: 100%;
+        height: 30em;
+      }
+
+}
+
+
+/****************************************************************
+TABLET 321 to 767px which means a bit of mobile duplicate css 
+*****************************************************************/
+@media only screen and (min-width: 321px) and (max-width: 767px) { 
+	
+	HEADER H1 {
+		font-size:1.3em;
+		letter-spacing:0.1em;
+	}
+	NAV UL LI {
+		width:100%;
+		display:block;
+	}
+	NAV UL LI A {
+		width:100%;
+		display:inline-block;
+	}
+	P {
+		font-size:1.2em;
+		letter-spacing:2px;
+	}
+	
+	/****************************************************************
+	INDEX PAGE SPECIFIC!
+	*****************************************************************/
+	.index-first-rightfloat {
+		float:left;
+		width:80%;
+		margin-left:1em;
+	}
+	.index-first-leftfloat img{
+		width:90%;
+	}
+
+	/****************************************************************
+	BUY PAGE SPECIFIC!
+	*****************************************************************/
+	
+	#commentcontainer {
+		clear:both;
+		width:90%;
+		margin:25px 0 25px 10px;
+		padding-bottom:20px;
+		display:inline-block;
+	}
+	#comment-float-right{
+		float:left;
+	}
+
+	.comments-name {
+		font-size:1em;
+	}
+	.comments-body {
+		font-size:1em;
+	}
+	/****************************************************************
+	Contact PAGE SPECIFIC!
+	*****************************************************************/
+	
+	.contact-float-left {
+		width:100%;
+		text-align:center;
+		margin:30px auto;
+	}
+	.contact-float-right {
+	width:100%;
+	display:block;
+	margin:0 auto;
+	
+
+	}
+	#map {
+        width: 100%;
+        height: 30em;
+      }
+}
+
+/****************************************************************
+DESKTOP 767px Mostly should be hanlded already.
+*****************************************************************/
+
+@media only screen and (min-width: 768px) {
+	
+
+	NAV UL {
+		width:500px;
+		text-align:center;
+	}
+
+	NAV UL LI A {
+		display:block;
+		padding:0px 10px;
+	}	
+	P {
+		font-size:1.2em;
+		letter-spacing:1px;
+		line-height:1em;
+
+	/****************************************************************
+	INDEX PAGE SPECIFIC!
+	*****************************************************************/
+	}
+	.index-first-rightfloat {
+		margin-right:1em;
+
+	}
+	.vcard {
+		margin:2em auto;
+		display:block;
+		width:50%;
+	}
+
+	#map {
+		width:100%;
+	}
+
+}
+
+
