@@ -8,5 +8,5 @@ him mine for reference to solve his seamingly minor issues. Nieve? Yes of course
 signing a paper of academic misconduct for my part in plagerism. I guess my assignemnt made it to several more students.
 I received a zero but I'm pretty sure I nailed it. Thankfully it was just a stern warning and wouldn't end up permenently on my transcript. So now, I'm going to share it with the world! HAHA.
 
-Seriously though, I made this myself. Those classmates didn't even end up sticking around the program and failed out adding further
+Seriously though, I made this myself. Those classmates didn't even end up sticking around the program and failed out. this added further
 insult to me having to carry the full two year penalty to term. 
