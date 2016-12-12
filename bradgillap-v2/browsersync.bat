@@ -1,1 +1,2 @@
-browser-sync start --server --files "*.html, css/*.css, *.js/js, *.png, *.jpg, *.bmp, *.xml"
+cd src/
+browser-sync start --server --files "**/*.html,**/*.css,**/*.png,**/*.gif,**/*.jpg,**/*.jpeg,**/*.xml,**/*.php,**/*.js,**/*.ico,**/*.txt"
