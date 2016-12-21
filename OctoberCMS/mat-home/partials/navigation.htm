@@ -1,0 +1,88 @@
+description = "Navigation Menu"
+==
+<nav>
+    <div class="nav-wrapper blue-grey lighten- z-index-1">
+        <a href="#!" class="brand-logo"></a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse">
+            <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+            <li>
+                <a href="{{ 'index' | page }}">
+                    <i class="material-icons left">home</i>Home
+                </a>
+            </li>
+            <li>
+                <a href="{{ 'guides' | page }}">
+                    <i class="material-icons left">lightbulb_outline</i>Guides
+                </a>
+            </li>
+            <li>
+                <a href="{{ 'forum' | page }}">
+                    <i class="material-icons left">forum</i>Forum
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ 'contact' | page }}">
+                    <i class="material-icons left">email</i>Contact
+                </a>
+            </li>
+
+            {% if user %}
+
+
+            <li>
+                <a data-request="onLogout" data-request-data="redirect: '/'">
+                    <i class="material-icons left">exit_to_app</i>Sign out
+                </a>
+            </li>
+            {% else %}
+
+            <li>
+                <a href="{{ 'account' | page }}">
+                    <i class="material-icons left">account_circle</i>Login
+                </a>
+            </li>
+            {% endif %}
+
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+            <li>
+                <a href="{{ 'index' | page }}">
+                    <i class="material-icons left">home</i>Home
+                </a>
+            </li>
+            <li>
+                <a href="{{ 'guides' | page }}">
+                    <i class="material-icons left">lightbulb_outline</i>Guides
+                </a>
+            </li>
+            <li>
+                <a href="{{ 'forum' | page }}">
+                    <i class="material-icons left">forum</i>Forum
+                </a>
+            </li>
+            <li>
+                <a href="{{ 'contact' | page }}">
+                    <i class="material-icons left">email</i>Contact
+                </a>
+            </li>
+            <li>
+                {% if user %}
+
+                <a data-request="onLogout" data-request-data="redirect: '/index'">
+                    <i class="material-icons left">exit_to_app</i>Sign out
+                </a>
+            </li>
+            {% else %}
+
+            <li>
+                <a href="{{ 'account' | page }}">
+                    <i class="material-icons left">account_circle</i>Login
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>

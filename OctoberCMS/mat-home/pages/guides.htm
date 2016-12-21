@@ -1,0 +1,38 @@
+title = "Guides"
+url = "/guides"
+layout = "default"
+description = "This is actually the blog article list page of excerpts but I have changed blog to guides."
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "guides/category"
+postPage = "guides/posts"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "guides/category"
+==
+<div class="container">
+
+    <h2>Guides List</h2>
+    <div class="divider"></div>
+        <div class="row">
+            <div class="col s12 m8 l8">
+                {% component 'blogPosts' %}
+            </div>
+            <div class="col s12 m4 l4 flow-text">
+                <div class="card-panel">
+                    <i class="material-icons left">format_list_bulleted</i>Categories
+                    <div class="divider"></div>
+                    {% component 'blogCategories' %}
+                </div>
+            
+            </div>
+        
+        </div>
+</div>

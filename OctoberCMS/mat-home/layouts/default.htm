@@ -1,0 +1,40 @@
+description = "The default page layout"
+
+[session]
+security = "all"
+==
+<!DOCTYPE html>
+<html lang="{{ this.theme.meta_lang }}">
+<head>
+    <title>{{ this.page.title }}</title>
+    {% partial "meta" %} <!--import meta information -->
+    {% partial "favicon" %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{{ ['assets/css/materialize.min.css']|theme }}" rel="stylesheet"> 
+    <link href="{{ ['assets/css/main.css']|theme }}" rel="stylesheet"> 
+    {% styles %} <!-- Import Styles -->
+</head>
+<body class="grey lighten-5">
+    {% partial "navigation" %} <!-- Import navigation content -->
+    {% page %}                 <!-- Import page content -->
+    {% partial "footer" %}     <!-- Import Footer -->
+    <!-- Import javascripts -->
+    <script src="{{ [
+        'assets/js/jquery-2.2.4.min.js',
+        'assets/js/materialize.min.js',
+        '@framework',
+        '@framework.extras']|theme }}"></script>
+    {% scripts %}
+    
+    <!-- Initialize Specific Page JS -->
+    <script>
+        $(".button-collapse").sideNav();
+        $(document).ready(function() {
+    	$('.parallax').parallax();
+        });
+    </script>
+    <script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.2'><\/script>".replace("HOST", location.hostname));
+//]]></script>
+</body>
+</html>

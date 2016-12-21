@@ -1,0 +1,53 @@
+description = "The page footer"
+==
+<footer class="parallax-container">
+
+    <div class="parallax">
+        <img src="{{ 'assets/images/cable2.jpg'|theme }}" alt="Footer Backgorund image of UTP Cables.">
+    </div>
+    
+      <div class="row section container">
+        <div class="col s12 m4 l4">
+          <div class="card light-green darken-1">
+            <div class="card-content white-text">
+              <span class="card-title flow-text">{% content "footer/cardTitle1" %}</span>
+                <p>
+                    {% content "footer/copyrightAuthor" %}
+                    <script type="text/javascript">
+                        var d = new Date()
+                        document.write(d.getFullYear())
+                    </script>
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m4 l4">
+          <div class="card cyan darken-1">
+            <div class="card-content white-text">
+              <span class="card-title flow-text">{% content "footer/cardTitle2" %}</span>
+                <a href="https://browsersync.io/">
+                    <img src="{{ 'assets/images/browsersync.png'|theme }}" alt="browsersync logo">
+                </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m4 l4">
+          <div class="card orange darken-1">
+            <div class="card-content white-text">
+              <span class="card-title flow-text">{% content "footer/cardTitle3" %}</span>
+              <p class="flow-text">
+              
+                <a href="http://www.w3.org/html/logo/">
+                    <img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-device-multimedia-performance-semantics.png" width="261" height="64" alt="HTML5 Powered with CSS3 / Styling, Device Access, Multimedia, Performance &amp; Integration, and Semantics" title="HTML5 Powered with CSS3 / Styling, Device Access, Multimedia, Performance &amp; Integration, and Semantics">
+                </a>
+                <a href="http://octobercms.com/">
+                    <img src="{{ 'assets/images/octobercms.png'|theme }}" alt="octobercms logo">
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+</footer>

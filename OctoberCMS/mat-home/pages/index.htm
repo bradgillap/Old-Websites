@@ -1,0 +1,150 @@
+title = "index"
+url = "/"
+layout = "default"
+description = "Welcome to domain.com"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 1
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "guides/category"
+postPage = "guides/posts"
+==
+<div class="container">
+	<div class="row section">
+		<div class="col s12 m12 l5">
+			<h4 class="grey-text text-darken-1">$domain</h4>
+			<div class="divider"></div>
+                <blockquote class="flow-text">
+    			    {% content "index/blockQuote" %}
+                </blockquote>
+		</div>
+		<div class="col m2 l2"></div>
+		<div class="col s12 m12 l4">
+		
+			{% component 'blogPosts' %}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="card col s12 m5 l5 z-index-1">
+			<div class="card-image waves-effect waves-block waves-light">
+				<img class="activator" src="https://placehold.it/320x240" alt="Office">
+			</div>
+			<div class="card-content">
+				<span class="card-title activator grey-text text-darken-4">Github<i class="material-icons right">more_vert</i></span>
+				<p><a href="https://github.com/bradgillap">Browse my GitHub</a></p>
+			</div>
+			<div class="card-reveal">
+				<span class="card-title grey-text text-darken-4">Free Code!<i class="material-icons right">close</i></span>
+				<p class="flow-text">List of my projects:</p>
+				<ul class="collapsible" data-collapsible="accordion">
+					<li>
+						<div class="collapsible-header"><i class="material-icons">settings_ethernet</i>IPXEBOOT
+							<div class="right">[<a href="https://github.com/bradgillap/IPXEBOOT">Project Link</a>]</div>
+						</div>
+						<div class="collapsible-body">
+							<p>This is a boot menu script for IPXE.</p>
+						</div>
+					</li>
+					<li>
+						<div class="collapsible-header"><i class="material-icons">stay_primary_landscape</i>I2C-LCD-Display
+							<div class="right">[<a href="https://github.com/bradgillap/I2C-LCD-Display">Project Link</a>]</div>
+						</div>
+						<div class="collapsible-body">
+							<p>Use sensors and API's to show realtime data on a cheap raspberry pi LCD.</p>
+						</div>
+					</li>
+					<li>
+						<div class="collapsible-header"><i class="material-icons">perm_scan_wifi</i>Informeshion
+							<div class="right">[<a href="https://github.com/bradgillap/Informeshion">Project Link</a>]</div>
+						</div>
+						<div class="collapsible-body">
+							<p>Building a wireless mesh network with off the shelf IOT devices. Hasn't got off the ground yet.</p>
+						</div>
+					</li>
+					<li>
+						<div class="collapsible-header"><i class="material-icons">games</i>BradCraft
+							<div class="right">[<a href="https://github.com/bradgillap/BradCraft">Project Link</a>]</div>
+						</div>
+						<div class="collapsible-body">
+							<p>Scripts related to automation of the Minecraft server.</p>
+						</div>
+					</li>
+					<li>
+						<div class="collapsible-header"><i class="material-icons">code</i>Script-Bank
+							<div class="right">[<a href="https://github.com/bradgillap/Script-Bank">Project Link</a>]</div>
+						</div>
+						<div class="collapsible-body">
+							<p>The Script-Bank is a repository of useful snippets of code.</p>
+						</div>
+					</li>
+					<li>
+						<div class="collapsible-header"><i class="material-icons">web</i>Websites
+							<div class="right">[<a href="https://github.com/bradgillap/websites">Project Link</a>]</div>
+						</div>
+						<div class="collapsible-body">
+							<p>Different websites I've built for myself.</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+		<div class=" col s12 m1 l1"></div>
+
+		<div class="card col s12 m5 l5 z-index-1">
+			<div class="card-image waves-effect waves-block waves-light">
+				<img class="activator" src="https://placehold.it/320x240" alt="Office">
+			</div>
+			<div class="card-content">
+				<span class="card-title activator grey-text text-darken-4">{% content "index/box1Title" %}<i class="material-icons right">more_vert</i></span>
+				<p><a href="#">LINK</a></p>
+			</div>
+			<div class="card-reveal">
+				<span class="card-title grey-text text-darken-4">{% content "index/box1Title" %}<i class="material-icons right">close</i></span>
+				<p class="flow-text">
+					{% content "index/box1Content" %}
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="card col s12 m5 l5 z-index-1">
+			<div class="card-image waves-effect waves-block waves-light">
+				<img class="activator" src="https://placehold.it/320x240" alt="Office">
+			</div>
+			<div class="card-content">
+				<span class="card-title activator grey-text text-darken-4">{% content "index/box1Title" %}<i class="material-icons right">more_vert</i></span>
+				<p><a href="/mc">LINK</a></p>
+			</div>
+			<div class="card-reveal">
+				<span class="card-title grey-text text-darken-4">{% content "index/box1Title" %}<i class="material-icons right">close</i></span>
+				<p class="flow-text">
+					{% content "index/box1Content" %}
+				</p>
+			</div>
+		</div>
+
+
+		<div class=" col s12 m1 l1"></div>
+
+		<div class="card col s12 m5 l5 z-index-1">
+			<div class="card-image waves-effect waves-block waves-light">
+				<img class="activator" src="https://placehold.it/320x240" alt="Office">
+			</div>
+			<div class="card-content">
+				<span class="card-title activator grey-text text-darken-4">TITLE<i class="material-icons right">more_vert</i></span>
+				<p><a href="/pac">LINK</a></p>
+			</div>
+			<div class="card-reveal">
+				<span class="card-title grey-text text-darken-4">{% content "index/box1Title" %}<i class="material-icons right">close</i></span>
+				<p class="flow-text">{% content "index/box1Content" %}</p>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,17 @@
+title = "Forum Members"
+url = "/forum/member/:slug"
+layout = "default"
+description = "The member page displays forum member information."
+is_hidden = 0
+
+[forumMember]
+slug = "{{ :slug }}"
+viewMode = "view"
+channelPage = "forum/channel"
+topicPage = "forum/topic"
+==
+<div class="container">
+    <h3>{{ this.page.title }}</h3>
+    <div class="divider"></div>
+    {% component 'forumMember' %}
+</div>
