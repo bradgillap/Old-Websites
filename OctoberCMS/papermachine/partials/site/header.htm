@@ -1,0 +1,60 @@
+==
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content grey darken-4">
+    <li><a href="#!">Cat1</a></li>
+    <li><a href="#!">Cat2</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">Cat3</a></li>
+</ul>
+<nav>
+    <div class="nav-wrapper row grey darken-4">
+        <a href="#!" class="brand-logo hide-on-small-only">Bradley Gillap</a>
+<!-- Mobile Menu Begin -->
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="side-nav grey darken-4" id="mobile-demo">
+            <li {% if this.page.id == 'Home' %}class="active"{% endif %}>
+                <a href="{{ 'home'|page }}">"Home</a></li>
+            <li {% if this.page.id == 'Guides' %}class="active"{% endif %}>Guides</li>
+            <li {% if this.page.id == 'Resume' %}class="active"{% endif %}>
+                <a href="{{ 'resume'|page }}">Resume</a></li>
+            <li {% if this.page.id == 'Contact' %}class="active"{% endif %}>
+                <a href="{{ 'contact'|page }}">Contact</a></li>
+        </ul>
+<!-- Mobile Menu End -->
+<!-- Large Search Begin -->
+        <div class="input-field col s3 right hide-on-med-and-down">
+            <form>
+                <div>
+                    <input id="search" type="search" required>
+                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                    <i class="material-icons">close</i>
+                </div>
+            </form>
+        </div>
+<!-- Large Search End -->
+<!-- Small Search Begin -->
+        <div class="input-field col s9 right hide-on-large-only">
+            <form>
+                <div>
+                    <input id="search" type="search" required>
+                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                    <i class="material-icons">close</i>
+                </div>
+            </form>
+        </div>
+<!-- Small Search End -->
+<!-- Large Menu Begin -->
+        <ul class="right hide-on-med-and-down">
+            <li><a href="{{ 'home'|page }}">Home</a></li>
+    <!-- Dropdown Trigger -->
+            <li {% if this.page.id == 'Home' %}class="active"{% endif %}>
+                <a class="dropdown-button " href="#!" data-activates="dropdown1">Guides
+                    <i class="material-icons right">arrow_drop_down</i></a></li>
+            <li {% if this.page.id == 'Resume' %}class="active"{% endif %}>
+                <a href="{{ 'resume'|page }}">Resume</a></li>
+            <li {% if this.page.id == 'Contact' %}class="active"{% endif %}>
+                <a href="{{ 'contact'|page }}">Contact</a></li>
+        </ul>
+<!-- Large Menu End -->
+    </div>
+</nav>

@@ -1,0 +1,1 @@
+make sure the theme-preview.png goes here with that name.
