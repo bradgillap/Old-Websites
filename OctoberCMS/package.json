@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-util": "latest",
+    "gulp-rename": "latest",
+    "browser-sync": "latest"
+    }
+}

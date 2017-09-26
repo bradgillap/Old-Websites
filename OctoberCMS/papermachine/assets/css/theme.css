@@ -1,3 +1,23 @@
-    .parallax-container {
-      height: "500px";
+
+
+
+/* Homne Page Overrides */
+    .thinfont {
+    
+        font-weight: 300;
     }
+    
+    .parallax-container {
+      height: 500px ;
+      z-index: -1;
+    }
+    .parallax {
+        z-index: -1;
+        }
+    .ontop {
+        position: relative;
+        z-index: 1;
+        }
+    blockquote {
+          border-left: 5px solid #0d47a1 ;
+        }
