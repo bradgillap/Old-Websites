@@ -1,0 +1,131 @@
+title = "Post"
+url = "/guide/post/:slug"
+layout = "default"
+is_hidden = 0
+
+[blogPost guidePost]
+slug = "{{ :slug }}"
+categoryPage = "guide/category"
+
+[forumEmbedTopic]
+embedCode = "{{ :slug }}"
+channelSlug = "guide-comments"
+memberPage = "account"
+
+[syntaxed]
+theme = "dark"
+
+[account]
+paramCode = "code"
+forceSecure = 0
+==
+<?php
+public function onCheckEmail()
+{
+    return ['isTaken' => Auth::findUserByLogin(post('email')) ? 1 : 0];
+}
+
+function onEnd()
+{
+    // Optional - set the page title to the post title
+    if (isset($this->post))
+        $this->page->title = $this->post->title;
+}
+?>
+==
+{% component 'syntaxed' %}
+<div class="container">
+
+{% if post %}
+    <h2>{{ post.title }}</h2>
+
+    <div class="divider"></div>
+    {% component 'guidePost' %}
+
+
+<h3>Comments</h3>
+<div class="divider"></div>
+{% if not user %}
+    <div class="row">
+        <div class="col s12 m12 l6">
+            <ul class="collapsible popout" data-collapsible="accordion">
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">account_circle</i><span class="flow-text">Sign In to Comment</span>
+                        <i class="material-icons">arrow_drop_down</i>
+                    </div>
+                    <div class="collapsible-body">
+                        
+                        <!-- place login form here.-->
+                        <h4>Sign in</h4>
+                        <div class="divider"></div>
+                        <form id="login" data-request="onSignin">
+                            <div class="input-field">
+                                <i class="material-icons prefix">email</i>
+                                <input name="email" type="email" class="validate" >
+                                <label for="email" data-error="wrong" data-success="right">Email address</label>
+                            </div>
+                            <div class="input-field">
+                                <i class="material-icons prefix">vpn_key</i>
+                                <input name="password" type="password" class="validate">
+                                <label>Password</label>
+                            </div>
+                            <p> <a href="{{ 'resetpassword' | page }}">Password Recovery</a></p>
+                            <button class="btn waves-effect waves-light right" type="submit">SIGN ON
+                                <i class="material-icons right">person</i>
+                            </button>
+                        </form>
+                        <br>
+                    </div>   
+                </li>
+            </div>
+
+        <div class="col s12 m12 l6">
+            <ul class="collapsible popout" data-collapsible="accordion">
+                <li>
+                        <!-- end sign in form -->
+                    <div class="collapsible-header"><i class="material-icons">input</i>
+                        <span class="flow-text">Register to Comment</span>
+                        <i class="material-icons">arrow_drop_down</i>
+                    </div>
+                    <div class="collapsible-body">
+                        <!-- register form -->
+                        
+                        <h3>Register</h3>
+                        <div class="divider"></div>
+                        <form data-request="onRegister">
+                            <div class="input-field">
+                            <i class="material-icons prefix">email</i>
+                            <input name="email" 
+                                type="email" class="validate"  
+                                data-request="onCheckEmail" 
+                                data-request-success="$('#loginTaken').toggle(!!data.isTaken)" 
+                                data-track-input>
+                            <label for="email" data-error="wrong" data-success="right">Email address</label>
+                            </div>
+                            <div class="input-field">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input name="name" type="text" class="validate">
+                                <label>Full Name</label>
+                            </div>
+                            <div class="input-field ">
+                                <i class="material-icons prefix">vpn_key</i>
+                                <input name="password" type="password" class="validate">
+                                <label>Password</label>
+                            </div>
+                        <button class="btn waves-effect waves-light right" type="submit">REGISTER
+                            <i class="material-icons right">person_add</i>
+                        </button>
+                        </form>
+                        <br>
+                        <!-- end register form -->
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endif %}
+{% component 'forumEmbedTopic' %}
+</div>
+{% else %}
+    <h2>Post not found</h2>
+{% endif %}

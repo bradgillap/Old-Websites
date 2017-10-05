@@ -1,0 +1,15 @@
+title = "Guides Post List"
+url = "/guide/postlist/:slug"
+layout = "default"
+is_hidden = 0
+
+[blogPosts guidePost]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :slug }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "guide/category"
+postPage = "guide/posts"
+==
+{% component 'guidePost' %}

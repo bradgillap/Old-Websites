@@ -1,0 +1,72 @@
+title = "Guides"
+url = "/guides/:page?"
+layout = "default"
+is_hidden = 0
+
+[blogCategories guideCategory]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "guide/category"
+
+[blogPosts guidePost]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "guide/category"
+postPage = "guide/posts"
+==
+<div class="slider">
+        
+        <ul class="slides">
+            
+            <li>
+                <img src="http://lorempixel.com/480/320/cats/" alt="Random image from the Internet.">
+                <div class="caption center-align">
+                    <h3>{{ this.page.title }}</h3>
+                    <h5 class="">/ɡīd/ + /s/</h5>
+                    <p class="">Show or indicate the way (to someone).</p>
+                </div>
+            </li>
+            <li>
+                <img src="http://lorempixel.com/480/320/cats/" alt="Random image from the Internet.">
+                <div class="caption left-align">
+                    <h3>{{ this.page.title }}</h3>
+                    
+                    <blockquote><h5 class="black">"If it isn't written down, it didn't happen"</h5></blockquote>
+                    <p class="">Always document your work.</p>
+                </div>
+                
+            </li>
+            <li>
+                <img src="http://lorempixel.com/480/320/technics/" alt="Random image from the Internet.">
+                <div class="caption left-align">
+                    <h3>{{ this.page.title }}</h3>
+                    
+                    <blockquote><h5 class="black">"Some sort of highlighted guide"</h5></blockquote>
+                    <p class="">A small description of it.</p>
+                </div>
+                
+            </li>
+        </ul>
+        
+    </div> 
+<div class="container">
+   
+    <div class="row">
+
+        <div class="col s12 m8 l9">
+            
+            {% component 'guidePost' %}
+            
+        </div>
+        <div class="col s12 m4 l3">
+            <div class="card-panel">
+                <h4>Category</h4>
+                <div class="divider"></div>
+                {% component 'guideCategory' %}
+            </div>
+        </div>        
+    </div>
+
+</div>

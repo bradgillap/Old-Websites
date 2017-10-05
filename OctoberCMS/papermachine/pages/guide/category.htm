@@ -1,0 +1,42 @@
+title = "Guides Category"
+url = "/guide/category/:slug/:page?"
+layout = "default"
+is_hidden = 0
+
+[blogCategories guideCategory]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "guide/category"
+
+[blogPosts guidePost]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :slug }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "guide/category"
+postPage = "guide/posts"
+==
+<?php
+function onEnd()
+{
+    // Optional - set the page title to the category name
+    if ($this->category)
+        $this->page->title = $this->category->name;
+}
+?>
+==
+<div class="container">
+    <div class="row">
+        <div class="col s12 m8 l9">
+            {% component 'guidePost' %}
+        </div>
+        <div class="col s12 m4 l3">
+            <div class="card-panel">
+                <h4>Category</h4>
+                <div  class="divider"></div>
+                {% component 'guideCategory' %}
+            </div>
+        </div>
+    </div>
+</div>

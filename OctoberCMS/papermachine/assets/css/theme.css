@@ -1,36 +1,65 @@
-
-
-/* Homne Page Overrides */
-    .thinfont {
-    
-        font-weight: 300;
+/* Homne Page Overrides */
+    .thinfont {
+    
+        font-weight: 300;
+    }
+    
+    .parallax-container {
+      height: 400px ;
+      position: relative;
+      z-index: -1;
+    }
+    .parallax {
+        z-index: -1;
+        position: relative;
+        }
+    .ontop {
+        position: relative;
+        z-index: 1;
+        }
+    blockquote {
+          border-left: 5px solid #0d47a1 ;
+        }
+
+/* Header section Overrides */
+
+
+nav .site-name {
+  position: absolute;
+  color: #fff;
+  display: inline-block;
+  font-size: 2.1rem;
+  padding-left:20px;
+}
+
+a:hover .nav-hover {
+    
+    color:#80d8ff   ;
+    
+}
+
+/* Footer section Overrides */
+
+/* Begin flexible footer */
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+/* End flexible footer */
+
+/* Input field colours */
+  /* label color */
+
+
+
+/* Other  */
+    .active {
+        
+        font-weight: bold;
+        
     }
-    
-    .parallax-container {
-      height: 500px ;
-      z-index: -1;
-    }
-    .parallax {
-        z-index: -1;
-        }
-    .ontop {
-        position: relative;
-        z-index: 1;
-        }
-    blockquote {
-          border-left: 5px solid #0d47a1 ;
-        }
-
-/* Footer page Overrides */
-
-/* Begin flexible footer */
-  body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-
-  main {
-    flex: 1 0 auto;
-  }
-/* End flexible footer */

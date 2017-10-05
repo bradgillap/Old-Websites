@@ -2,27 +2,85 @@ title = "Home"
 url = "/"
 layout = "default"
 is_hidden = 0
+
+[blogPosts guidePost]
+pageNumber = "{{ :page }}"
+postsPerPage = 5
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "guide/category"
+postPage = "guide/posts"
 ==
-<div class="parallax-container">
-    <div class="parallax">
-        <img src="{{ 'assets/images/bg/mechkeyboard.jpg'|theme }}">
-        <div class="row ontop">
-        
-            <div class="col 12 center-align">
-                <h3 class="white-text thinfont hide-on-med-and-down"><blockquote class="black"><span class="type-it">You can automate anything with a weekend and<span class="light-blue-text darken-4"> Powershell.</span></blockquote></h3>
-            </div>
-        
-        </div>
-    </div>
-</div>
-<div class="section white">
-    <div class="row container">
-        <h2 class="header">Parallax</h2>
-        <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
-    </div>
-</div>
-<div class="parallax-container">
-    <div class="parallax">
-        <img src="{{ 'assets/images/bg/mechkeyboard.jpg'|theme }}">
-    </div>
+<div class="parallax-container">
+    <div class="parallax">
+        <img src="{{ 'assets/images/bg/mechkeyboard.jpg'|theme }}" alt="Background image of a mechanical keyboard.">
+        <div class="row ontop">
+        
+            <div class="col 12 center-align">
+                <blockquote class="black"><h3><span class="type-it white-text">You can automate anything in a weekend with </span></h3></blockquote>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="section white">
+        <div class="row container">
+                {% content 'home/section1Title.htm' %}
+            <div class="divider"></div>
+                {% content 'home/section1Quote.htm' %}
+        </div>
+        <div class="row container">
+          <div class="card col s12 m5 l5 xl5 hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="{{ 'assets/images/cards/GitHub_Logo.png'|theme }}" alt="Image of the github logo.">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">{% content 'home/card1Title.htm' %}<i class="material-icons right">more_vert</i></span>
+                {% content 'home/card1Link.htm' %}
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">{% content 'home/card1RevealTitle.htm' %}<i class="material-icons right">close</i></span>
+                <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                    <div class="collapsible-header">{% content 'home/card1RevealOp1Title.htm' %}</div>
+                    <div class="collapsible-body"><span>{% content 'home/card1RevealOp1Desc.htm' %}</span></div>
+                </li>
+                <li>
+                    <div class="collapsible-header">{% content 'home/card1RevealOp2Title.htm' %}</div>
+                    <div class="collapsible-body"><span>{% content 'home/card1RevealOp2Desc.htm' %}</span></div>
+                </li>
+                <li>
+                    <div class="collapsible-header">{% content 'home/card1RevealOp3Title.htm' %}</div>
+                    <div class="collapsible-body"><span>{% content 'home/card1RevealOp3Desc.htm' %}</span></div>
+                </li>
+                </ul>
+            </div>
+          </div>
+        
+          <div class="col s1"></div>
+          
+                  <div class="card col s12 m6 l6 xl6 white hoverable">
+                    <div class="card-content white-text">
+                        <span class="card-title black-text">Latest Guide <i class="material-icons">book</i></span>
+                        <p class="black-text">Step by step guides of various categories.</p>
+                        <div class="divider"></div>
+                        
+                        {% for post in guidePost.posts %}
+    
+                            <div class="row">
+                                <div class="flow-text col s6"><a href="{{ post.url }}">{{post.title}}</a></div> <div class="grey-text text-darken-4 right flow-text col s6"> {{ post.published_at|date("m/d/Y") }}</div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="card-action">
+                      <a href="/guides">ALL GUIDES</a>
+                      
+                    </div>
+                  </div>
+                </div>
+        </div>
+
+<div class="parallax-container">
+    <div class="parallax">
+        <img src="{{ 'assets/images/bg/mechkeyboard.jpg'|theme }}" alt="Background image of a mechanical keyboard.">
+    </div>
 </div>
